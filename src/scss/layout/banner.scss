@@ -1,0 +1,33 @@
+.banner{
+
+    position: relative;
+
+    overflow: hidden;
+
+    width: 100vw;
+
+    background-color: #D2D2DB;
+
+    .parallax{
+        position: absolute;
+        z-index: 1;
+    }
+
+    .slider{
+        z-index: 2;
+    }
+
+    @include _Extra_large_{
+
+        min-height: 940px;
+        height: 100vh;
+
+    }
+
+    @include _Extra_large{
+
+        height: calcFluid(400,940);
+
+    }
+
+}

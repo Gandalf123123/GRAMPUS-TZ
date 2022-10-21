@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="ru">
+  @@include('html/head.html', {
+    'title': 'Bentley'
+  })
+  <body>
+    <div class="wrapper">
+      @@include('html/header.html', {})
+      <main class="page">
+        @@include('html/section/banner.html', {})
+        @@include('html/section/service.html', {})
+      </main>
+      @@include('html/footer.html', {})
+    </div>
+    @@include('html/popup/popup-menu.html', {})
+    <script src="js/app.min.js"></script>
+  </body>
+</html> 

@@ -1,0 +1,132 @@
+.header{
+
+  display: block;
+  position: absolute;
+
+  background-color: #D2D2DB;
+
+  width: 100%;
+
+  z-index: 3;
+
+  @include _Extra_large_{
+    top: 20px;
+  }
+
+  @include _Extra_large{
+
+    padding-top: 15px;
+    position: relative;
+
+  }
+
+  &__container{
+
+    display: flex;
+    align-items: center;
+
+    @include _Extra_large_{
+      justify-content: space-between;
+    }
+
+    @include _Extra_large{
+
+      & > * {
+  
+        &:not(:last-child){
+          margin-right: calcFluid(10,30,320,1200);
+        }
+        
+      }
+  
+    }
+
+  }
+
+  &__callback{
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+
+    *:last-child{
+      margin-top: 5px;
+    }
+
+    @include _medium {
+      margin-left: auto;
+    }
+
+  }
+
+  .logo{
+
+    @include _Extra_large{
+
+      width: calcFluid(100,157, 575, 1200);
+
+    }
+
+  }
+
+  .menu-page{
+
+    &__link{
+
+      font-weight: 400;
+      font-size: 20px;
+      line-height: 150%;
+
+      color: $colorSecondary;
+
+      opacity: 0.5;
+
+      &:hover{
+        color: $colorHoverSecondary;
+        opacity: 1;
+        transition: $transitionMain;
+      }
+
+      &:not(:last-child) {
+        margin-right: 50px;
+      }
+
+    }
+
+    @include _Extra_large {
+      display: none;
+    }  
+
+  }
+
+  .menu-network{
+
+    display: flex;
+
+    @include _Extra_large{
+      margin-left: auto;
+    }
+
+    @include _medium{
+      display: none;
+    }
+
+    &__link{
+
+      &:not(:last-child) {
+        margin-right: 15px;
+      }
+
+    }
+
+  }
+
+  .hamburger{
+
+    @include _Extra_large_ {
+      display: none;
+    }  
+
+  }
+
+}

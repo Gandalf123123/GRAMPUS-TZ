@@ -1,0 +1,117 @@
+@import "../../../node_modules/swiper/swiper.scss";
+
+.slider{
+
+    $slider: &;
+
+    &_banner{
+
+        width: 100%;
+        height: 100%;
+
+        #{$slider}-description{
+
+            width: 100%;
+            max-width: 470px;
+
+            @include _Extra_large_{
+                margin-right: 100px;
+            }
+
+            @include _Extra_large{
+                @include _medium_{
+                    max-width: calcFluid(320,470,767,1200);
+                }
+            }
+
+            @include _medium{
+
+                position: absolute;
+
+                z-index: 1;
+                background-color: #ffffffdb;
+
+                border-radius: 15px;
+
+                padding: 20px 30px;
+
+            }
+
+            @include _small{
+                max-width: calcFluid(300,470,320,575);
+            }
+
+
+            &__title{
+
+                font-weight: 800;
+                font-size: 42px;
+                line-height: 120%;
+
+                color: $colorMain;
+
+                margin-bottom: 10px;
+                
+                @include _Extra_large{
+                    font-size: calcFluid(22,42);
+                }
+
+            }
+
+            &__content{
+
+                font-weight: 400;
+                font-size: 16px;
+                line-height: 140%;
+
+                color: $colorSecondary;
+
+                margin-bottom: 40px;
+
+                @include _Extra_large{
+                    font-size: calcFluid(14,16);
+                }
+                
+            }
+
+            &__link{
+
+                @include _small{
+                    margin: auto;
+                }
+
+            }
+
+        }
+
+        #{$slider}-image{
+            max-width: 640px;
+            // margin-top: auto;
+            img{
+                width: 100%;
+            }
+            @include _large {
+                max-width: calcFluid(200,640,320,1200);
+            }
+        }
+
+        .swiper{
+
+            &-slide{
+
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                @include _Extra_large{
+                    padding: 0 15px;
+                }
+    
+            }
+
+        }
+
+    }
+
+}
+

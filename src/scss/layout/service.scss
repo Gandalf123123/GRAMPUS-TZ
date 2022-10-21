@@ -1,0 +1,22 @@
+.service{
+
+    width: 100%;
+    height: fit-content;
+
+    margin-top: 55px;
+    @include _Extra_large{
+        margin-top: calcFluid(35,55,320,1200);
+    }
+
+    &__title{
+        margin-bottom: 43px;
+        @include _Extra_large{
+            margin-bottom: calcFluid(30,43,320,1200);
+        }
+    }
+
+    .catalog-service{
+        margin-bottom: 50px;
+    }
+
+}

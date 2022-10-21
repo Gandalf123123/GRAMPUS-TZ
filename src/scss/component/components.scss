@@ -1,0 +1,1092 @@
+
+.title{
+
+    &_type-1{
+
+        font-weight: 800;
+        font-size: 42px;
+        line-height: 120%;
+
+        color: $colorMain;
+
+        @include _Extra_large{
+
+            font-size: calcFluid(30,42,320,1200);
+
+        }
+
+    }
+
+}
+
+.hamburger{
+
+    $this: &;
+
+    display: flex;
+
+    align-items: center;
+
+    width: 35px;
+    height: 20px;
+
+    position: relative;
+    cursor: pointer;
+
+    &--opened{
+
+        #{$this}__line{
+
+            &:first-child,&:last-child{
+
+                opacity: 0;
+                transition: all ease 400ms, opacity 0s .4s;
+
+            }
+
+            &:first-child{
+
+                top: 50%;
+                transform: translateY(-50%);
+
+            }
+
+            &:last-child{
+
+                bottom: 50%;
+                transform: translateY(50%);
+
+            }
+
+            &:nth-child(2),&:nth-child(3){
+                transition: transform .4s .4s;
+            }
+
+            &:nth-child(2){
+                transform: rotate(45deg);
+            }
+
+            &:nth-child(3){
+                transform: rotate(-45deg);
+            }
+
+        }
+
+    }
+
+    &__line{
+
+        display: block;
+
+        width: 100%;
+        height: 2px;
+
+        position: absolute;
+
+        left: 0;
+        margin: auto;
+
+        background: $colorMain;
+
+        transition: all ease 800ms, opacity 0s .2s;
+
+        &:first-child{
+            top: 0;
+        }
+
+        &:last-child{
+            bottom: 0;
+        }
+
+        &_cross{
+
+            top: 0;
+            bottom: 0;
+
+            margin: auto;
+
+            transition: transform .4s;
+
+        }
+
+    }
+
+}
+
+.link-network {
+
+    &__image {
+
+        width: 30px;
+        height: 30px;
+
+        background-color: $colorMain;
+        border-radius: 50%;
+
+        object-fit: none;
+
+        &:hover {
+            background: $colorHoverMain;
+            transition: $transitionMain;
+        }
+
+    }
+
+}
+
+.link-telephone {
+
+    font-weight: 800;
+    font-size: 24px;
+    
+    line-height: 100%;
+    
+    color: $colorMain;
+    
+    @include _Extra_large{
+        font-size: calcFluid(16,24,320,1200);
+    }
+
+    &:hover {
+        color: $colorHoverMain;
+        transition: $transitionMain;
+    }
+
+}
+
+.link-address {
+
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 100%;
+
+    color: #240401;
+
+    opacity: 0.5;
+
+    @include _small {
+        display: none;
+    }
+
+}
+
+.catalog-service{
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 30px;
+    
+    @include _Extra_large {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    @include _large {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include _medium {
+        grid-template-columns: 1fr;
+    }
+
+    .card{
+        margin: auto;
+    }
+
+}
+
+.catalog-price{
+
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-gap: 30px;
+
+    @include _Extra_large {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include _medium{
+        grid-template-columns: 1fr;
+    }
+
+}
+
+.card{
+
+    $card:&;
+
+    &_type-1{
+
+        width: 100%;
+
+        cursor: pointer;
+
+        span{
+            color: $colorSecondary;
+        }
+
+        #{$card}__avatar{
+
+            display: flex;
+            justify-content: center;
+
+            position: relative;
+
+            overflow: hidden;
+
+            height: 270px;
+            border-radius: 25px;
+
+            background: #D2D2DB;
+
+            transition: $transitionMain;
+
+            margin-bottom: 15px;
+
+            &-circle{
+
+                position: absolute;
+
+                background-color: #ECECF9;
+                transition: $transitionMain;
+
+                border-radius: 50%;
+
+                &_1{
+
+                    width: 68px;
+                    height: 68px;
+
+                    right: -28px;
+                    top: -28px;
+
+                }
+
+                &_2{
+
+                    width: 20px;
+                    height: 20px;
+
+                    right: 26px;
+                    top: 26px;
+
+                }
+
+                &_3{
+
+                    width: 375px;
+                    height: 375px;
+
+                    background-color: #C3C4D0;
+
+                    top: 45%;
+
+                }
+                
+            }
+
+        }
+
+        #{$card}__image{
+
+            max-width: 100%;
+            margin-top: auto;
+
+            z-index: 1;
+
+        }
+
+        #{$card}__title{
+
+            display: block;
+
+            width: fit-content;
+            white-space: nowrap;
+
+            font-weight: 400;
+            font-size: 24px;
+
+            line-height: 150%;
+
+        }
+
+        #{$card}__description{
+            padding: 0 15px;
+        }
+
+        #{$card}__more{
+            display: flex;
+            justify-content: space-between;
+        }
+
+        #{$card}__price{
+            font-weight: 800;
+            font-size: 24px;
+            line-height: 150%;
+        }
+
+        &:hover{
+
+            #{$card}__avatar{
+
+                background-color: #744037;
+
+                &-circle{
+                    background-color: $colorHoverMain;
+
+                    &_3{
+                        top: 25%;
+                    }
+
+                }
+
+
+            }
+
+            #{$card}__image{
+                filter: drop-shadow(0px 0px 9px #f2cbaa);
+            }
+
+        }
+
+
+    }
+
+    &_type-2{
+
+        width: 100%;
+
+        border: 4px dashed #D2D2DB;
+        border-radius: 25px;
+
+        cursor: pointer;
+
+        transition: border $transitionMain, background $transitionMain;
+
+        padding: 35px;
+
+        span{
+            display: block;
+            color: $colorSecondary;
+        }
+
+        #{$card}__avatar{
+
+            position: relative;
+            width: fit-content;
+
+            margin-bottom: 50px;
+
+            &-icon{
+
+                position: absolute;
+                left: 20%;
+
+            }
+
+        }
+
+        #{$card}__title{
+
+            font-weight: 800;
+            font-size: 24px;
+            line-height: 130%;
+
+            margin-bottom: 20px;
+
+        }
+
+        #{$card}__subtitle{
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 150%;
+        }
+
+        &:hover{
+
+            background-color: #f6f6f8;
+            border-color: #f6f6f8;
+
+        }
+
+    }
+
+}
+
+.parallax{
+
+    $parallax:&;
+
+    &_banner{
+
+        position: relative;
+
+        width: 100%;
+        height: 100%;
+
+        min-width: 1920px;
+
+        *{position: absolute;}
+
+        #{$parallax}-item{
+
+            &_circle{
+                outline: 3px solid #F6F6F8;
+                border-radius: 50%;
+            }
+    
+            &_circle-fill{
+                border-radius: 50%;
+                background-color: #ECECF9;
+            }
+    
+        }
+
+        #{$parallax}-item_back{
+            top: 22.5% !important;
+            left: 47.3% !important;
+        }
+
+        #{$parallax}-item_1{
+
+            left: 8.9% !important;
+            top: 45% !important;
+
+            width: 36px;
+            height: 36px;
+
+        }
+
+        #{$parallax}-item_2{
+
+            top: 49.7% !important;
+            left: 10.5% !important;
+
+            width: 36px;
+            height: 36px;
+
+        }
+
+        #{$parallax}-item_3{
+
+            top: 71.4% !important;
+            left: 4.3% !important;
+
+            width: 63px;
+            height: 63px;
+
+        }
+
+        #{$parallax}-item_4{
+
+            top: 74.6% !important;
+            left: 6.3% !important;
+
+            width: 136px;
+            height: 136px;
+
+        }
+
+        #{$parallax}-item_5{
+
+            top: 47% !important;
+            left: 47.1% !important;
+
+            width: 36px;
+            height: 36px;
+
+        }
+
+        #{$parallax}-item_6{
+
+            top: 63.6% !important;
+            left: 43.4% !important;
+
+            width: 36px;
+            height: 36px;
+
+        }
+
+        #{$parallax}-item_7{
+
+            top: 24.9% !important;
+            left: 53.2% !important;
+
+            width: 170px;
+            height: 170px;
+
+        }
+
+        #{$parallax}-item_8{
+
+            top: 38.9% !important;
+            left: 52.2% !important;
+
+            width: 47px;
+            height: 47px;
+
+        }
+
+        #{$parallax}-item_9{
+
+            top: 59.5% !important;
+            left: 47.5% !important;
+
+            width: 36px;
+            height: 36px;
+
+        }
+
+        #{$parallax}-item_10{
+
+            top: 62.4% !important;
+            left: 47.7% !important;
+
+            width: 117px;
+            height: 117px;
+
+        }
+
+        #{$parallax}-item_11{
+
+            top: 85.5% !important;
+            left: 42% !important;
+
+            width: 25px;
+            height: 25px;
+
+        }
+
+        #{$parallax}-item_12{
+
+            top: 91.4% !important;
+            left: 40% !important;
+
+            width: 137px;
+            height: 137px;
+
+        }
+
+        #{$parallax}-item_13{
+
+            top: 81.1% !important;
+            left: 46.8% !important;
+
+            width: 43px;
+            height: 43px;
+
+        }
+
+        #{$parallax}-item_14{
+
+            top: 78% !important;
+            left: 48.7% !important;
+
+            width: 170px;
+            height: 170px;
+
+        }
+
+        #{$parallax}-item_15{
+
+            top: 16% !important;
+            left: 67.7% !important;
+
+            width: 47px;
+            height: 47px;
+
+        }
+
+        #{$parallax}-item_16{
+
+            left: 79.3% !important;
+            top: 40% !important;
+
+            width: 56px;
+            height: 56px;
+        }
+
+        #{$parallax}-item_17{
+
+            top: 44.4% !important;
+            left: 74.1% !important;
+
+            width: 142px;
+            height: 142px;
+        }
+
+        #{$parallax}-item_18{
+
+            top: 60.9% !important;
+            left: 81.6% !important;
+
+            width: 43px;
+            height: 43px;
+
+        }
+
+        #{$parallax}-item_19{
+
+            top: 64.9% !important;
+            left: 78.8% !important;
+
+            width: 170px;
+            height: 170px;
+
+        }
+
+        #{$parallax}-item_20{
+
+            top: 78.6% !important;
+            left: 77.9% !important;
+
+            height: 50px;
+            width: 50px;
+
+        }
+
+        #{$parallax}-item_21{
+
+            top: 89.3% !important;
+            left: 77.8% !important;
+
+            width: 208px;
+            height: 208px;
+
+        }
+
+        #{$parallax}-item_22{
+
+            top: 50.1% !important;
+            left: 84.5% !important;
+
+            width: 58px;
+            height: 58px;
+
+        }
+
+        #{$parallax}-item_23{
+
+            top: 42.3% !important;
+            left: 85.5% !important;
+
+            width: 25px;
+            height: 25px;
+        }
+        
+        #{$parallax}-item_24{
+
+            top: 56.1% !important;
+            left: 88.6% !important;
+            
+            width: 25px;
+            height: 25px;
+        }
+        
+
+    }
+
+    &_service{
+
+        position: absolute;
+
+        width: 100%;
+        height: 100%;
+
+        min-width: 1920px;
+
+        *{
+            &:not(.parallax-group){
+                position: absolute;
+            }
+        }
+
+        #{$parallax}-item{
+
+            opacity: 0.5;
+
+            &_circle{
+                border: 3px solid #D2D2DB;
+                border-radius: 50%;
+            }
+    
+            &_circle-fill{
+                border-radius: 50%;
+                background-color: #F6F6F8;
+            }
+    
+        }
+
+        @for $i from 1 through 8 {   
+            #{$parallax}-item_#{$i}{
+                opacity: 1;
+            }
+        }
+
+        #{$parallax}-group{
+            position: relative;
+            width: fit-content;
+        }
+
+        #{$parallax}-group_1{
+
+            top: 11.4% !important;
+            left: 7.9% !important;
+
+            #{$parallax}-item_2{
+    
+                transform: translate(8px, 9px);
+    
+                width: 96px;
+                height: 96px;
+    
+            }
+    
+            #{$parallax}-item_3{
+    
+                transform: translate(-1px, 92px);
+    
+                width: 41px;
+                height: 41px;
+    
+            }
+    
+            #{$parallax}-item_4{
+    
+                transform: translate(12px, 131px);
+    
+                width: 13px;
+                height: 13px;
+    
+            }
+    
+            #{$parallax}-item_5{
+    
+                transform: translate(47px, 104.5px);
+    
+                width: 16px;
+                height: 16px;
+    
+            }
+    
+            #{$parallax}-item_6{
+    
+                transform: translate(76px, 94px);
+                
+                width: 21px;
+                height: 21px;
+    
+            }
+    
+            #{$parallax}-item_7{
+    
+                transform: translate(90px, 79px);
+    
+                width: 27px;
+                height: 27px;
+    
+            }
+    
+            #{$parallax}-item_8{
+    
+                transform: translate(89px, 105px);
+    
+                width: 39px;
+                height: 39px;
+    
+            }
+
+        }
+
+        #{$parallax}-group_2{
+
+            top: 20% !important;
+            left: 2.2%;
+
+            #{$parallax}-item_9{
+    
+                width: 48px;
+                height: 48px;
+    
+            }
+    
+            #{$parallax}-item_10{
+
+                transform: translate(-3px, 45px);
+
+                width: 48px;
+                height: 48px;
+    
+            }
+    
+            #{$parallax}-item_11{
+
+                transform: translate(38px, 32px);
+
+                width: 32px;
+                height: 32px;
+    
+            }
+
+        }
+
+        #{$parallax}-group_3{
+
+            position: relative;
+
+            top: 66.1% !important;
+            left: 9.1% !important;
+
+            #{$parallax}-item_14{
+
+                width: 49px;
+                height: 49px;
+    
+            }
+    
+            #{$parallax}-item_15{
+
+                transform: translate(-1px, 43px);
+
+                width: 21px;
+                height: 21px;
+    
+            }
+
+        }
+
+        #{$parallax}-group_4{
+
+            top: 33.8% !important;
+            left: 88.5% !important;
+
+            #{$parallax}-item_19{
+
+                width: 72px;
+                height: 72px;
+
+            }
+
+            #{$parallax}-item_20{
+
+                transform: translate(10px, -9px);
+
+                width: 16px;
+                height: 16px;
+
+            }
+
+            #{$parallax}-item_21{
+
+                transform: translate(23px, -25px);
+
+                width: 27px;
+                height: 27px;
+
+            }
+
+            #{$parallax}-item_22{
+
+                transform: translate(-18px, 20px);
+
+                width: 21px;
+                height: 21px;
+
+            }
+
+            #{$parallax}-item_23{
+
+                transform: translate(69px, 13px);
+
+                width: 41px;
+                height: 41px;
+
+            }
+
+            #{$parallax}-item_24{
+
+                transform: translate(63px, 46px);
+
+                width: 21px;
+                height: 21px;
+
+            }
+
+        }
+
+        #{$parallax}-group_5{
+
+            top: 41% !important;
+            left: 93.5% !important;
+
+            #{$parallax}-item_25{
+
+                width: 49px;
+                height: 49px;
+
+            }
+
+            #{$parallax}-item_26{
+
+                transform: translate(-1px, 43px);
+
+                width: 21px;
+                height: 21px;
+
+            }
+
+        }
+
+        #{$parallax}-group_6{
+
+            top: 48.4% !important;
+            left: 89.8% !important;
+
+            #{$parallax}-item_26{
+
+                width: 41px;
+                height: 41px;      
+
+            }
+            
+            #{$parallax}-item_27{
+
+                transform: translate(-8px, 2px);
+
+                width: 13px;
+                height: 13px;
+
+            }
+
+        }
+
+        #{$parallax}-item_1{
+
+            left: 5.7% !important;
+            top: 14% !important;
+
+            width: 16px;
+            height: 16px;
+
+        }
+
+        #{$parallax}-item_12{
+
+            top: 28.7% !important;
+            left: 6.7% !important;
+
+            width: 22px;
+            height: 22px;
+
+        }
+
+        #{$parallax}-item_13{
+
+            left: 7.5% !important;
+            top: 63.7% !important;
+
+            width: 21px;
+            height: 21px;
+
+        }
+
+        #{$parallax}-item_16{
+
+            top: 71.8% !important;
+            left: 10.4% !important;
+
+            width: 41px;
+            height: 41px;
+
+        }
+
+        #{$parallax}-item_17{
+
+            left: 95.2% !important;
+            top: 26% !important;
+
+            width: 13px;
+            height: 13px;
+
+        }
+
+        #{$parallax}-item_18{
+
+            left: 89.6% !important;
+            top: 29.1% !important;
+
+            width: 13px;
+            height: 13px;
+            
+        }
+
+        #{$parallax}-item_28{
+
+            top: 46.6% !important;
+            left: 94.8% !important;
+
+            width: 41px;
+            height: 41px;
+
+        }
+
+        #{$parallax}-item_29{
+
+            top: 59.2% !important;
+            left: 94.7% !important;
+
+            opacity: 1;
+
+            width: 21px;
+            height: 21px;
+
+        }
+
+    }
+
+}
+
+.btn{
+
+    $btn:&;
+
+    &_type-1{
+
+        display: flex;
+        align-items: center;
+
+        width: max-content;
+        
+        background-image: linear-gradient(12.18deg, $colorMain -18.77%, $colorHoverMain 221.97%);
+        box-shadow: 0px 2px 0px #6c3232, 0px 5px 10px rgb(116 64 55 / 75%);
+        border-radius: 25px;
+
+        padding: 17px 60px;
+
+        transition: $transitionMain;
+
+        cursor: pointer;
+
+        &:hover {
+            background-image: linear-gradient(185.84deg, #6c3232 4.67%, #7f4743 95.39%);
+            box-shadow: 0px 1px 0px #6c3232, 0px 2px 10px rgb(116 64 55 / 60%), inset 0px 4px 9px #552727;
+        }
+
+        .#{btn}__icon{
+            margin-right: 10px;
+        }
+
+        .#{btn}__text{
+
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 100%;
+
+            height: 12px;
+
+            color: #ffffff;
+
+        }
+
+    }
+
+}

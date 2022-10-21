@@ -1,0 +1,17 @@
+@import 'config/fonts';
+@import 'config/mixins';
+@import 'config/functions';
+@import 'config/vars';
+@import 'config/reset';
+@import 'config/global';
+
+
+@import 'layout/header';
+@import 'layout/footer';
+@import 'layout/banner';
+@import 'layout/service';
+
+@import 'component/components.scss';
+@import 'component/slider.scss';
+
+@import 'popup/popup-menu';
